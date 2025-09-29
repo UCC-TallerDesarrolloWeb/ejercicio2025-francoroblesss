@@ -2,27 +2,48 @@
 <html lang="es">
   <head>
     <title>Catálogo de Productos</title>
-    <style>
-        main {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            text-align: center;
-        }
-
-        main div {
-            border: 1px solid black;
-            border-radius: 15px;
-            margin: 15px;
-            padding: 15px;
-        }
-
-        div img {
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="store.css">
   </head>
-  <body>
-    <main>
+  <body class="grid-container">
+    <header class="item1">Catálogo de Productos</header>
+    <nav class="item2">
+      <a href="productos.html">Catálogo de Productos</a>
+      <a href="">Carrito de Compras</a>
+    </nav>
+    <aside class="item3">
+      <form>
+        <fieldset>
+          <legend>Búsquedas</legend>
+          <label for="search">Buscar:</label>
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Palabra..."
+          />
+        </fieldset>
+        <fieldset>
+          <legend>Precios</legend>
+          <label for="price-min">Mínimo</label>
+          <input
+            type="number"
+            id="price-min"
+            name="price-min"
+            value="0"
+            min="0"
+          />
+          <label for="price-max">Máximo</label>
+          <input
+            type="number"
+            id="price-max"
+            name="price-max"
+            value="0"
+            max="1000"
+          />
+        </fieldset>
+      </form>
+    </aside>
+    <main class="item4">
       <div>
         <img
           src="../Ejercicios-JavaScript/images/cabezal-cerrado.webp"
@@ -52,10 +73,7 @@
         <h3>Protectores Manos</h3>
       </div>
       <div>
-        <img
-          src="../Ejercicios-JavaScript/images/dobok.webp"
-          alt="Dobok"
-        />
+        <img src="../Ejercicios-JavaScript/images/dobok.webp" alt="Dobok" />
         <h3>Dobok</h3>
       </div>
       <div>
@@ -66,5 +84,6 @@
         <h3>Protectores Pie</h3>
       </div>
     </main>
+    <footer class="item5">Info de Contacto</footer>
   </body>
 </html>
