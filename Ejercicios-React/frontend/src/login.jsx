@@ -1,17 +1,20 @@
 import {useState} from 'react';
-import './login.css';   
+import { useNavigate } from 'react-router-dom';
+import './styles/login.scss';
 
 const Login = () => {
     const [Usuario, setUsuario] = useState('');
     const [Password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handlerLogin = async (e) => {
         e.preventDefault();
 
         if(Usuario === 'admin' && Password === 'admin'){
             console.log('Login OK');
+            navigate('/actividades');
         } else {
-            console.log('Login Failed');
+            console.log('Login ERROR');
         }
     }
 
