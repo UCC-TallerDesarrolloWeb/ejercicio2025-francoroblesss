@@ -76,15 +76,46 @@ let mostrarOcultar = (id) => {
     }
 }
 
-let restar = () => {
-    console.log("Sumar")
-    let res1 = document.getElementById("nums1").value;
-    let res2 = document.getElementById("nums2").value;
+let sumar = () => {
+    let sum1 = document.getElementById("nums1").value;
+    let sum2 = document.getElementById("nums2").value;
 
-    if (isNaN(sum1) || isNaN(sum2)){
-        alert("Los valores ingresados no son correctos");
+    if (isNaN(sum1) || isNaN(sum2)) {
+        alert("Una de las variables ingresadas no es numérica");
     } else {
         document.getElementById("totalS").value = Number(sum1) + Number(sum2);
     }
 }
 
+let restar = () => {
+    let res1 = document.getElementById("numr1").value;
+    let res2 = document.getElementById("numr2").value;
+
+    if (isNaN(res1) || isNaN(res2)) {
+        alert("Una de las variables ingresadas no es numérica");
+    } else {
+        document.getElementById("totalR").value = Number(res1) - Number(res2);
+    }
+}
+
+let multiplicar = () => {
+    let mul1 = document.getElementById("numm1").value;
+    let mul2 = document.getElementById("numm2").value;
+
+    if (isNaN(mul1) || isNaN(mul2)) {
+        alert("Una de las variables ingresadas no es numérica");
+    } else {
+        document.getElementById("totalM").value = Number(mul1) * Number(mul2);
+    }
+}
+
+let dividir = () => {
+    let div1 = document.getElementById("numd1").value;
+    let div2 = document.getElementById("numd2").value;
+
+    if (isNaN(div1) || isNaN(div2)) {
+        alert("Una de las variables ingresadas no es numérica");
+    } else {
+        document.getElementById("totalD").value = Number(div1) / Number(div2);
+    }
+}
