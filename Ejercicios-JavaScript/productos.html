@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="store.css" type="text/css" />
+    <script type="text/javascript" src="tienda.js"></script>
+    <meta charset="UTF-8" />
+  </head>
+  <body class="grid-container" onload="mostrarCatalogo();contarProductos()">
+    <header class="item1">Accesorios para Autos</header>
+    <nav class="item2">
+      <a href="productos.html">Catálogo de Productos</a>
+      <a href="carrito.html">Carrito de Compras</a>
+      <div id="cant-prod">0</div>
+    </nav>
+    <aside class="item3">
+      <form>
+        <fieldset>
+          <legend>Búsqueda</legend>
+          <label for="search">Buscar:</label>
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Palabra..."
+            onchange="filtrarProducto()"
+          />
+        </fieldset>
+        <fieldset>
+          <legend>Precios</legend>
+          <p>
+            <label for="price-min">Mínimo:</label>
+            <input
+              type="number"
+              id="price-min"
+              name="price-min"
+              value="0"
+              min="0"
+              onchange="filtrarProducto()"
+            />
+          </p>
+          <p>
+            <label for="price-max">Máximo:</label>
+            <input
+              type="number"
+              id="price-max"
+              name="price-max"
+              min="0"
+              onchange="filtrarProducto()"
+            />
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Categoría</legend>
+          <p>
+            <input
+              type="checkbox"
+              id="accesorios"
+              name="accesorios"
+              onchange="filtrarProducto()"
+            />
+            <label for="accesorios">Accesorios</label>
+          </p>
+          <p>
+            <input
+              type="checkbox"
+              id="seguridad"
+              name="seguridad"
+              onchange="filtrarProducto()"
+            />
+            <label for="seguridad">Seguridad</label>
+          </p>
+          <p>
+            <input
+              type="checkbox"
+              id="tecnologia"
+              name="tecnologia"
+              onchange="filtrarProducto()"
+            />
+            <label for="tecnologia">Tecnología</label>
+          </p>
+          <p>
+            <input
+              type="checkbox"
+              id="mantenimiento"
+              name="mantenimiento"
+              onchange="filtrarProducto()"
+            />
+            <label for="mantenimiento">Mantenimiento</label>
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Marca</legend>
+          <select id="marca" onchange="filtrarProducto()">
+            <option value="Todas">Todas</option>
+            <option value="AutoStyle">AutoStyle</option>
+            <option value="SafeDrive">SafeDrive</option>
+            <option value="TechCar">TechCar</option>
+          </select>
+        </fieldset>
+        <select id="order" onchange="orderCatalog(this.value)">
+          <option disabled value="">Seleccione un orden</option>
+          <option value="menor">Precio - de Menor a Mayor</option>
+          <option value="mayor">Precio - de Mayor a Menor</option>
+          <option value="a-z">Nombre - de A a la Z</option>
+          <option value="z-a">Nombre - de la Z a la A</option>
+        </select>
+      </form>
+    </aside>
+    <dialog id="detalle">
+      <h2>Detalle del Producto</h2>
+      <h3 id="titulo-prod"></h3>
+      <p id="descr-prod"></p>
+      <p id="precio-prod"></p>
+      <button type="button" onclick="cerrarModal()">Cerrar</button>
+    </dialog>
+    <main class="item4" id="catalogo"></main>
+    <footer class="item5">Info de Contacto</footer>
+  </body>
+</html>
